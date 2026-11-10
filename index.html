@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2> My Library</h2>
+        <nav>
+            <button onclick="showSection('dashboard')">Dashboard</button>
+            <button onclick="showSection('books')">Books</button>
+            <button onclick="showSection('students')">Students</button>
+            <button onclick="showSection('issue')">Issue Book</button>
+            <button onclick="showSection('return')">Return Book</button>
+            <button onclick="showSection('history')">Transactions</button>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header>
+            <h1>Library Management System</h1>
+            <p>Manage books, students and transactions</p>
+        </header>
+
+        <section id="dashboard" class="section active">
+            <h2>Dashboard</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Books</h3>
+                    <p id="totalBooks">0</p>
+                </div>
+                <div class="card">
+                    <h3>Students</h3>
+                    <p id="totalStudents">0</p>
+                </div>
+                <div class="card">
+                    <h3>Issued Books</h3>
+                    <p id="issuedBooks">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="books" class="section">
+            <h2>Book Management</h2>
+            <form id="bookForm">
+                <input id="bookId" placeholder="Book ID" required>
+                <input id="bookName" placeholder="Book Name" required>
+                <input id="author" placeholder="Author" required>
+                <button type="submit">Add Book</button>
+            </form>
+            <h3>Book List</h3>
+            <div id="bookList"></div>
+        </section>
+
+        <section id="students" class="section">
+            <h2>Student Management</h2>
+            <form id="studentForm">
+                <input id="studentId" placeholder="Student ID" required>
+                <input id="studentName" placeholder="Student Name" required>
+                <input id="email" type="email" placeholder="Email" required>
+                <button type="submit">Register Student</button>
+            </form>
+            <h3>Student List</h3>
+            <div id="studentList"></div>
+        </section>
+
+        <section id="issue" class="section">
+            <h2>Issue Book</h2>
+            <form id="issueForm">
+                <input id="issueStudentId" placeholder="Student ID" required>
+                <input id="issueBookId" placeholder="Book ID" required>
+                <button type="submit">Issue Book</button>
+            </form>
+            <p id="issueMessage"></p>
+        </section>
+
+        <section id="return" class="section">
+            <h2>Return Book</h2>
+            <form id="returnForm">
+                <input id="returnBookId" placeholder="Book ID" required>
+                <button type="submit">Return Book</button>
+            </form>
+            <p id="returnMessage"></p>
+        </section>
+
+        <section id="history" class="section">
+            <h2>Transaction History</h2>
+            <div id="transactionList"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
